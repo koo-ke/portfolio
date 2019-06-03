@@ -1,0 +1,44 @@
+.header {
+  width: 100%;
+  height: 50px;
+  background:black;
+  color: #ccc;
+  font-weight: bold;
+  &__icon {
+    float: left;
+    font-size: 30px;
+    margin: 10px 20px;
+  }
+  &__title {
+    line-height: 50px;
+  }
+  &__list {
+    font-size: 30px;
+    margin-right: 20px;
+    float: right;
+    color: #fff;
+  }
+}
+
+.contents {
+  width: 100vw;
+  height: 100vh;
+  background: red;
+  .side_ber {
+    width: 200px;
+    height: 600px;
+    background-color: blue;
+    &__list {
+      width: 200px;
+      height: 300px;
+      background-color: #fff;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+}
