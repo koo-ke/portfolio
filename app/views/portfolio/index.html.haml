@@ -1,19 +1,26 @@
-.header
-  .header__logo
-    = fa_icon 'heartbeat', class:'header__icon'
-    .header__title
-      portfolio
-      .header__list
-        = fa_icon 'align-justify'
+.wrapper
+  .header
+    .header__logo
+      = fa_icon 'heartbeat', class:'header__icon'
+      .header__title
+        portfolio!
+        .header__list
+          = fa_icon 'align-justify'
 
-.contents
-  .side_ber
-    .side_der__list
-      .side_ber__list--link
-  .contents__view
+  .contents
+    .contents__login
+    .contents__profile
+      %h2 profile
+      %p 
+      .contents__profile--photo
+      .contents__profile--photo
+      .contents__profile--photo
+    .contents__ruby
+    .contents__python
+    .contents__php
+  .side
 
-.footer
-  .footer__list
-  = fa_icon 'twitter'
-  = fa_icon 'github'
-  
+  .footer
+    Thank you!!
+    = fa_icon 'twitter', class:'footer__twitter'
+    = fa_icon 'github', class:'footer__github'
