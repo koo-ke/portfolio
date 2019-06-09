@@ -1,12 +1,6 @@
 .wrapper
   .header
-    .header__logo
-      = fa_icon 'heartbeat', class:'header__icon'
-      .header__title
-        portfolio
-        .header__list
-          = fa_icon 'align-justify'
-
+    .header__post 投稿する
   .contents
     .contents__login
       .side_ber
@@ -17,26 +11,38 @@
             %li.side_ber__profile
               Profile
             %li.side_ber__ruby
-              Ruby
+              miniapp
             %li.side_ber__python
-              Python
+              Geme
             %li.side_ber__php
               PHP
         .sns
-          = fa_icon 'twitter', class:'sns__twitter'
-          = fa_icon 'github', class:'sns__github'
+          = link_to 'https://twitter.com/kooke_pro', class:'link' do
+            = fa_icon 'twitter', class:'sns__twitter'
+          = link_to 'https://github.com/koo-ke', class:'link' do
+            = fa_icon 'github', class:'sns__github'
       .introduction
         .introduction__title
           introduction
-    .contents__profile
-      %h2 profile
-      %p 
-      .contents__profile--photo
-      .contents__profile--photo
-      .contents__profile--photo
+        .introduction__description
+          ここは安井宏輔のポートフォリオサイトです。
+          %br 制作したアプリを紹介します。
+          %br 見たいアプリをクリックしてください。 
+        .introduction__icon 
+          = fa_icon 'caret-square-o-left'
+        .introduction__echnology
+          haml/scss ruby rails javascript jQuery Mysql
     .contents__ruby
-    .contents__python
-    .contents__php
+      .title
+        %p ここにアプリ名が入ります
+      .app
+        .app__view
+        .app__description
+          %span.app__description--title POINT
+          %p ここに紹介文が入ります
+
+    -# .contents__python
+    -# .contents__php
 
   .footer
     Thank you!!
