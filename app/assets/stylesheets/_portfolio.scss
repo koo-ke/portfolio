@@ -60,6 +60,7 @@
       .title {
         height: 100px;
         width: 100%;
+        margin-bottom: 5px;
         font-size: 30px;
         font-weight: bold;
         background-color: #fff;
@@ -67,6 +68,13 @@
         background: #fff;
         border-top: solid 5px #5d627b;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+        .delete {
+          float: right;
+          margin: 10px;
+          &__icon {
+           color: #000;
+          }
+        }
         p {
           line-height: 100px;
           text-align: center;

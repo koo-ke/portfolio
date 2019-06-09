@@ -39,6 +39,9 @@
       - @posts.each do |post|
         .title
           %p= post.apptitle
+          .delete
+            = link_to "/portfolio/#{post.id}", method: :delete do
+              = fa_icon 'times-circle-o' , class:"delete__icon"
         .app
           .app__view
             = image_tag "#{post.image}",class:"app__view--image"
@@ -46,7 +49,7 @@
             %span.app__description--title POINT
             %p= post.text
             .app__github 
-              = link_to "#{post.github}" , class:"app__github--link"do
+              = link_to "#{post.github}" , class:"app__github--link" do
                 = fa_icon 'github'
 
     -# .contents__python

@@ -12,6 +12,11 @@ class PortfolioController < ApplicationController
     Post.create(posts_params)
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+  end
+
   private
   def posts_params
     params.permit(:apptitle, :image, :github, :text)
