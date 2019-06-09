@@ -1,7 +1,9 @@
 .wrapper
   .header
-  = link_to "/portfolio/new" do
-    .header__post 投稿する
+    .header__title
+      portfolio
+    = link_to "/portfolio/new" , class:"header__post"do
+      .header__post--text 投稿する
   .contents
     .contents__login
       .side_ber
@@ -16,12 +18,12 @@
             %li.side_ber__python
               Geme
             %li.side_ber__php
-              PHP
-        -# .sns
-        -#   = link_to 'https://twitter.com/kooke_pro', class:'link' do
-        -#     = fa_icon 'twitter', class:'sns__twitter'
-        -#   = link_to 'https://github.com/koo-ke', class:'link' do
-        -#     = fa_icon 'github', class:'sns__github'
+              Shopping
+        .sns
+          = link_to 'https://twitter.com/kooke_pro', class:'link' do
+            = fa_icon 'twitter', class:'sns__twitter'
+          = link_to 'https://github.com/koo-ke', class:'link' do
+            = fa_icon 'github', class:'sns__github'
       .introduction
         .introduction__title
           introduction
@@ -32,14 +34,14 @@
         .introduction__icon 
           = fa_icon 'caret-square-o-left'
         .introduction__echnology
-          haml/scss ruby rails
-    .contents__ruby
+          haml/scss ruby rails python
+    .contents__app
       - @posts.each do |post|
         .title
           %p= post.apptitle
         .app
           .app__view
-            -# = image_tag "#{post.image}"
+            = image_tag "#{post.image}",class:"app__view--image"
           .app__description
             %span.app__description--title POINT
             %p= post.text
