@@ -5,7 +5,15 @@ class PortfolioController < ApplicationController
   end
 
   def new
-    
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    post = Post.find(params[:id])
+    post.update(posts_params)
   end
 
   def create
@@ -16,6 +24,7 @@ class PortfolioController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
+    redirect_to portfolio_index_path
   end
 
   private

@@ -40,10 +40,10 @@
       .title
         %p= post.apptitle
         .delete
-          = link_to "/portfolio/#{post.id}", method: :delete do
+          = link_to "/portfolio/#{post.id}", method: :delete ,data: { confirm: '本当に削除しますか？' } do
             = fa_icon 'times-circle-o' , class:"delete__icon"
           .edit
-            = link_to "/portfolio/#{post.id}", method: :delete do
+            = link_to "/portfolio/#{post.id}/edit" do
               = fa_icon 'cog' , class:"delete__icon"
       .app
         .app__view
