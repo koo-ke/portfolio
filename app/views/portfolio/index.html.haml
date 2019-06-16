@@ -10,6 +10,9 @@
     = link_to "/users/sign_up", class:"header__post" do
       .header__post--text 新規登録
 
+    %a.btn-real{:href => "/users/sign_in"}
+      %i.fa.fa-power-off
+
   .contents
 
     .side_ber
@@ -55,7 +58,7 @@
 
         .introduction__description
           ログインすることで記事を観覧することができます。
-          %br 右上のログインボタンからログインして下さい。(仮) 
+          %br 右のログインボタンからログインして下さい。(仮) 
 
   .contents__app
     - @posts.each do |post|
@@ -76,6 +79,10 @@
           .app__github 
             = link_to "#{post.github}", class:"app__github--link" do
               = fa_icon 'github'
+
+
+
+
 
   .footer
     Thank you!!
