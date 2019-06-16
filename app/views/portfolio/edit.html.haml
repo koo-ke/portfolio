@@ -1,5 +1,5 @@
 .devise
-  = form_with(model:@posts,url: portfolio_index_path, local: true) do |f|
+  = form_with(model:@posts, url: portfolio_path, method: :patch, local: true) do |f|
     %h3
       編集する
     = f.text_field :apptitle ,placeholder: "apptitle"

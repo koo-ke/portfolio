@@ -14,11 +14,12 @@ class PortfolioController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update(posts_params)
+    redirect_to portfolio_index_path
   end
 
   def create
     Post.create(posts_params)
-    redirect_to root_path
+    rredirect_to portfolio_index_path
   end
 
   def destroy
