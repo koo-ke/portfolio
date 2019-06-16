@@ -65,15 +65,14 @@
         font-size: 30px;
         font-weight: bold;
         background-color: #fff;
-        color: #5d627b;
         background: #fff;
-        border-top: solid 5px #5d627b;
+        border-top: solid 5px #333;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
         .delete {
           float: right;
           margin: 10px;
           &__icon {
-           color: #000;
+           color: #333;
           }
         }
         p {
@@ -105,7 +104,7 @@
           position: relative;
           margin: 2em 0;
           padding: 0.5em 1em;
-          border: solid 3px #000;
+          border: solid 3px #333;
           border-radius: 8px;
           &--title {
             position: absolute;
