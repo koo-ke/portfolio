@@ -1,29 +1,36 @@
 .wrapper
+
   .header
+
     .header__title
       portfolio
-    = link_to "/portfolio/new" , class:"header__post"do
-      .header__post--text 投稿する
+
+      = link_to "/portfolio/new", class:"header__post" do
+        .header__post--text 投稿する
+
   .contents
+
+    .side_ber
+      .side_ber__title
+        Meun
+      .side_ber__menu
+        %ul
+          %li.side_ber__profile
+            Profile
+          %li.side_ber__ruby
+            ComingSoon
+          %li.side_ber__python
+            ComingSoon
+          %li.side_ber__php
+            ComingSoon
+      .sns
+        = link_to 'https://twitter.com/kooke_pro', class:'link' do
+          = fa_icon 'twitter', class:'sns__twitter'
+        = link_to 'https://github.com/koo-ke', class:'link' do
+          = fa_icon 'github', class:'sns__github'
+
     .contents__login
-      .side_ber
-        .side_ber__title
-          Meun
-        .side_ber__menu
-          %ul
-            %li.side_ber__profile
-              Profile
-            %li.side_ber__ruby
-              miniapp
-            %li.side_ber__python
-              Geme
-            %li.side_ber__php
-              Shopping
-        .sns
-          = link_to 'https://twitter.com/kooke_pro', class:'link' do
-            = fa_icon 'twitter', class:'sns__twitter'
-          = link_to 'https://github.com/koo-ke', class:'link' do
-            = fa_icon 'github', class:'sns__github'
+
       .introduction
         .introduction__title
           introduction
@@ -33,26 +40,26 @@
         .introduction__icon 
           = fa_icon 'caret-square-o-left'
         .introduction__echnology
-          haml/scss ruby rails python PHP mysql
+          haml/scss ruby rails mysql
 
   .contents__app
     - @posts.each do |post|
       .title
         %p= post.apptitle
         .delete
-          = link_to "/portfolio/#{post.id}", method: :delete ,data: { confirm: '本当に削除しますか？' } do
-            = fa_icon 'times-circle-o' , class:"delete__icon"
+          = link_to "/portfolio/#{post.id}", method: :delete, data: { confirm: '本当に削除しますか？' } do
+            = fa_icon 'times-circle-o', class:"delete__icon"
           .edit
             = link_to "/portfolio/#{post.id}/edit" do
-              = fa_icon 'cog' , class:"delete__icon"
+              = fa_icon 'cog', class:"delete__icon"
       .app
         .app__view
-          = image_tag "#{post.image}",class:"app__view--image"
+          = image_tag "#{post.image}", class:"app__view--image"
         .app__description
           %span.app__description--title POINT
           %p= post.text
           .app__github 
-            = link_to "#{post.github}" , class:"app__github--link" do
+            = link_to "#{post.github}", class:"app__github--link" do
               = fa_icon 'github'
 
   .footer
