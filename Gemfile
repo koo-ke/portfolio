@@ -71,3 +71,4 @@ gem "font-awesome-rails"
 gem "jquery-rails"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'devise'
