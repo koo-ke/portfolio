@@ -19,7 +19,7 @@ class PortfolioController < ApplicationController
 
   def create
     Post.create(posts_params)
-    rredirect_to portfolio_index_path
+    redirect_to portfolio_index_path
   end
 
   def destroy
