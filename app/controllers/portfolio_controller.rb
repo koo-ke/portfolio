@@ -10,6 +10,7 @@ class PortfolioController < ApplicationController
 
   def create
     Post.create(posts_params)
+    redirect_to root_path
   end
 
   def destroy

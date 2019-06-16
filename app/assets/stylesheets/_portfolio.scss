@@ -2,6 +2,7 @@
   height: 100%;
   width: 100%;
   color: #333;
+  
   .header {
     width: 100vw;
     height: 50px;
@@ -131,21 +132,6 @@
         }
       }
     }
-    
-    &__python {
-      height: 700px;
-      width: 800px;
-      padding: 20px 200px;
-      margin: auto;
-      background-color: #4169e1;
-    }
-    &__php {
-      height: 700px;
-      width: 800px;
-      padding: 20px 200px;
-      margin: auto;
-      background-color:#f0e68c;
-    }
   }
 
 .side_ber {
@@ -218,7 +204,6 @@
     }
   }
 }
-
 
   .footer {
     width: 100%;

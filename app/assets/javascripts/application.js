@@ -14,3 +14,9 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $(".delete").on("click", function() {
+    window.confirm("これが確認ダイアログです。");
+  });
+});

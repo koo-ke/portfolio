@@ -35,31 +35,23 @@
           = fa_icon 'caret-square-o-left'
         .introduction__echnology
           haml/scss ruby rails python
-    .contents__app
-      - @posts.each do |post|
-        .title
-          %p= post.apptitle
-          .delete
-            = link_to "/portfolio/#{post.id}", method: :delete do
-              = fa_icon 'times-circle-o' , class:"delete__icon"
-        .app
-          .app__view
-            = image_tag "#{post.image}",class:"app__view--image"
-          .app__description
-            %span.app__description--title POINT
-            %p= post.text
-            .app__github 
-              = link_to "#{post.github}" , class:"app__github--link" do
-                = fa_icon 'github'
 
-    -# .contents__python
-    -# .contents__php
+  .contents__app
+    - @posts.each do |post|
+      .title
+        %p= post.apptitle
+        .delete
+          = link_to "/portfolio/#{post.id}", method: :delete do
+            = fa_icon 'times-circle-o' , class:"delete__icon"
+      .app
+        .app__view
+          = image_tag "#{post.image}",class:"app__view--image"
+        .app__description
+          %span.app__description--title POINT
+          %p= post.text
+          .app__github 
+            = link_to "#{post.github}" , class:"app__github--link" do
+              = fa_icon 'github'
 
   .footer
     Thank you!!
-
--# .contents.row
--#   - @posts.each do |post|
--#     .content_post{:style => "background-image: url(#{tweet.image});"}
--#       = simple_format(tweet.text)
--#       %span.name= post.name
