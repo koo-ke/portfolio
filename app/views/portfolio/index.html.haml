@@ -29,12 +29,11 @@
           introduction
         .introduction__description
           ここは安井宏輔のポートフォリオサイトです。
-          %br 制作したアプリを紹介します。
-          %br 見たいアプリをクリックしてください。 
+          %br プログラミングに関するものを投稿します。 
         .introduction__icon 
           = fa_icon 'caret-square-o-left'
         .introduction__echnology
-          haml/scss ruby rails python
+          haml/scss ruby rails python PHP mysql
 
   .contents__app
     - @posts.each do |post|
@@ -43,6 +42,9 @@
         .delete
           = link_to "/portfolio/#{post.id}", method: :delete do
             = fa_icon 'times-circle-o' , class:"delete__icon"
+          .edit
+            = link_to "/portfolio/#{post.id}", method: :delete do
+              = fa_icon 'cog' , class:"delete__icon"
       .app
         .app__view
           = image_tag "#{post.image}",class:"app__view--image"
