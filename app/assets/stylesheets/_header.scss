@@ -6,9 +6,9 @@
   &__title {
     font-family: "Impact", cursive;
     color: #fff;
-    text-align: left;
+    text-align: center;
     line-height: 50px;
-    margin-left: 70px;
+    font-size: 40px;
   }
   &__post {
     float: right;
@@ -23,6 +23,7 @@
       position: relative;
       display: inline-block;
       font-weight: bold;
+      margin: 10px;
       padding: 0.25em 0.5em;
       text-decoration: none;
       border: solid 2px #fff;

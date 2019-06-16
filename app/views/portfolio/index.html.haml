@@ -5,10 +5,10 @@
     .header__title
       PORTFOLIO
 
-      = link_to "/portfolio/new", class:"header__post" do
-        .header__post--text 投稿する
-      = link_to "/users/sign_up", class:"header__post" do
-        .header__post--text 新規登録
+    = link_to "/portfolio/new", class:"header__post" do
+      .header__post--text 投稿する
+    = link_to "/users/sign_up", class:"header__post" do
+      .header__post--text 新規登録
 
   .contents
 
@@ -35,14 +35,27 @@
 
       .introduction
         .introduction__title
-          introduction
+          INTRODUCTION
         .introduction__description
           ここは安井宏輔のポートフォリオサイトです。
-          %br プログラミングに関するものを投稿します。 
-        .introduction__icon 
-          = fa_icon 'caret-square-o-left'
-        .introduction__echnology
-          haml/scss ruby rails mysql
+          %br プログラミングに関するものを投稿します。
+
+        .swiper-container.top-carousel
+          .swiper-wrapper
+            .swiper-slide
+              = image_tag 'python.png', alt: 'swipe01' , class: 'slider-image'
+            .swiper-slide
+              = image_tag 'miniapp.png', alt: 'swipe02' , class: 'slider-image'
+            .swiper-slide
+              = image_tag 'python.png', alt: 'swipe03' , class: 'slider-image'
+          .swiper-button-prev
+          .swiper-button-next
+          .swiper-pagination
+        = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"
+
+        .introduction__description
+          ログインすることで記事を観覧することができます。
+          %br 右上のログインボタンからログインして下さい。(仮) 
 
   .contents__app
     - @posts.each do |post|

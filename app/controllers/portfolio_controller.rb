@@ -17,6 +17,9 @@ class PortfolioController < ApplicationController
     redirect_to portfolio_index_path
   end
 
+  def show
+  end
+
   def create
     Post.create(posts_params)
     redirect_to portfolio_index_path
