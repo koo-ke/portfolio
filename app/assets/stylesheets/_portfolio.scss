@@ -5,3 +5,26 @@
   background: url("bg.image.jpg")fixed;
   background-size: cover;
 }
+
+.devise { 
+  width: 100vw;
+  height: 100vh;
+  background: url("bg.image.jpg")fixed;
+  background-size: cover;
+  color: #fff;
+  padding: 50px;
+  .inner {
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    line-height: 35px;
+    background-color: #333;
+    border-radius: 4px;
+    box-shadow: 20px 20px #fff;
+    h2 {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+}
