@@ -1,15 +1,16 @@
 .contents {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   padding-top: 50px;
 
   .side_ber {
     width: 200px;
-    height: 330px;
+    height: 650px;
     float: left;
     position: fixed;
     margin: 20px 0 0 20px;
     background-color: #fff;
+    overflow: scroll;
     &__title {
       width: 90%;
       height: 30px;

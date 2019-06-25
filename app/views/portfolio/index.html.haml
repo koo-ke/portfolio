@@ -9,8 +9,7 @@
       .header__post--text 投稿する
     = link_to "/users/sign_up", class:"header__post" do
       .header__post--text 新規登録
-
-    %a.btn-real{:href => "/users/sign_in"}
+    = link_to "/users/sign_in", class:"btn-real" do
       %i.fa.fa-power-off
 
   .contents
@@ -22,17 +21,7 @@
         %ul
           %li.side_ber__profile
             Profile
-          %li.side_ber__ruby
-            ComingSoon
-          %li.side_ber__python
-            ComingSoon
-          %li.side_ber__php
-            ComingSoon
-      .sns
-        = link_to 'https://twitter.com/kooke_pro', class:'link' do
-          = fa_icon 'twitter', class:'sns__twitter'
-        = link_to 'https://github.com/koo-ke', class:'link' do
-          = fa_icon 'github', class:'sns__github'
+          %a.twitter-timeline{:href => "https://twitter.com/kooke_pro?ref_src=twsrc%5Etfw"}
 
     .contents__login
 
@@ -49,8 +38,6 @@
               = image_tag 'python.png', alt: 'swipe01' , class: 'slider-image'
             .swiper-slide
               = image_tag 'miniapp.png', alt: 'swipe02' , class: 'slider-image'
-            .swiper-slide
-              = image_tag 'python.png', alt: 'swipe03' , class: 'slider-image'
           .swiper-button-prev
           .swiper-button-next
           .swiper-pagination
@@ -58,8 +45,9 @@
 
         .introduction__description
           ログインすることで記事を観覧することができます。
-          %br 右のログインボタンからログインして下さい。(仮) 
+          %br 右のログインボタンからログインして下さい。(仮)
 
+= if user_signed_in?
   .contents__app
     - @posts.each do |post|
       .title
@@ -79,10 +67,6 @@
           .app__github 
             = link_to "#{post.github}", class:"app__github--link" do
               = fa_icon 'github'
-
-
-
-
 
   .footer
     Thank you!!
