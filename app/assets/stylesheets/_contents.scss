@@ -30,51 +30,7 @@
         overflow: hidden;
         text-align: right;
       }
-      &__ruby {
-        background-color: #ff6347;
-        width: 90%;
-        height: 50px;
-        margin: 10px auto;
-        color: #fff;
-        font-size: 20px;
-        overflow: hidden;
-        text-align: right;
-      }
-      &__python {
-        background-color: #4169e1;
-        width: 90%;
-        height: 50px;
-        margin: 10px auto;
-        color: #fff;
-        font-size: 20px;
-        overflow: hidden;
-        text-align: right;
-      }
-      &__php {
-        background-color:#f0e68c;
-        width: 90%;
-        height: 50px;
-        margin: 10px auto;
-        color: #fff;
-        font-size: 20px;
-        overflow: hidden;
-        text-align: right;
-      }
-      .sns {
-        text-align: center;
-        .link {
-          text-decoration:none;
-        }
-      &__twitter {
-        font-size: 40px;
-        color: #333;
-      }
-      &__github {
-        font-size: 40px;
-        color: #333;
-      }
     }
-  }
 
   &__login {
     height: 700px;
@@ -102,6 +58,7 @@
       &__echnology {
         text-align: center;
       }
+      
     }
   }
 
