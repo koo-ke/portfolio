@@ -47,7 +47,7 @@
           ログインすることで記事を観覧することができます。
           %br 右のログインボタンからログインして下さい。(仮)
 
-= if user_signed_in?
+- if user_signed_in?
   .contents__app
     - @posts.each do |post|
       .title
