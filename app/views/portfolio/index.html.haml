@@ -7,10 +7,17 @@
 
     = link_to "/portfolio/new", class:"header__post" do
       .header__post--text 投稿する
-    = link_to "/users/sign_up", class:"header__post" do
-      .header__post--text 新規登録
-    = link_to "/users/sign_in", class:"btn-real" do
-      LOGIN.
+
+    - if user_signed_in?
+      = link_to destroy_user_session_path, method: :delete, class:"header__post" do
+        .header__post--text LOGOUT
+
+    - else
+      = link_to "/users/sign_up", class:"header__post" do
+        .header__post--text 新規登録
+
+  = link_to "/users/sign_in", class:"btn-real" do
+    LOGIN.
 
   .contents
 
@@ -52,12 +59,13 @@
     - @posts.each do |post|
       .title
         %p= post.apptitle
-        .delete
-          = link_to "/portfolio/#{post.id}", method: :delete, data: { confirm: '本当に削除しますか？' } do
-            = fa_icon 'times-circle-o', class:"delete__icon"
-          .edit
-            = link_to "/portfolio/#{post.id}/edit" do
-              = fa_icon 'cog', class:"delete__icon"
+        - if user_signed_in? && current_user.id == post.user_id
+          .delete
+            = link_to "/portfolio/#{post.id}", method: :delete, data: { confirm: '本当に削除しますか？' } do
+              = fa_icon 'times-circle-o', class:"delete__icon"
+            .edit
+              = link_to "/portfolio/#{post.id}/edit" do
+                = fa_icon 'cog', class:"delete__icon"
       .app
         .app__view
           = image_tag "#{post.image}", class:"app__view--image"
