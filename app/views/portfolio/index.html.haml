@@ -10,7 +10,7 @@
     = link_to "/users/sign_up", class:"header__post" do
       .header__post--text 新規登録
     = link_to "/users/sign_in", class:"btn-real" do
-      %i.fa.fa-power-off
+      LOGIN.
 
   .contents
 
@@ -45,7 +45,7 @@
 
         .introduction__description
           ログインすることで記事を観覧することができます。
-          %br 右のログインボタンからログインして下さい。
+          %br testuser@gmail.comでそのままログインできます
 
 - if user_signed_in?
   .contents__app
