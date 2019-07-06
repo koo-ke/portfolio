@@ -35,7 +35,7 @@ class PortfolioController < ApplicationController
   private
 
   def posts_params
-    params.permit(:apptitle, :image, :github, :text)
+    params.permit(:apptitle, :image, :github, :text).merge(user_id: current_user.id)
   end
 
 end
