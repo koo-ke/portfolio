@@ -5,12 +5,11 @@
     .header__title
       PORTFOLIO
 
-    = link_to "/portfolio/new", class:"header__post" do
-      .header__post--text 投稿する
-
     - if user_signed_in?
       = link_to destroy_user_session_path, method: :delete, class:"header__post" do
         .header__post--text LOGOUT
+      = link_to "/portfolio/new", class:"header__post" do
+        .header__post--text 投稿する
 
     - else
       = link_to "/users/sign_up", class:"header__post" do
