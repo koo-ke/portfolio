@@ -1,0 +1,35 @@
+.wrapper
+
+  = render 'portfolio/header'
+
+  .contents
+
+    = render 'portfolio/side_ber'
+
+    .contents__views
+      .postapp-wrapper
+        .profile-title
+          = fa_icon 'user'
+          Profile
+        .profile-image
+          = image_tag 'prof-image', class:"profile-image__resize"
+        .profile-data
+          %p Name
+          .profile-data__value
+            安井 宏輔
+          %p Birthday
+          .profile-data__value
+            1989/02/16
+        .profile-text
+          .profile-text__title
+            自己紹介
+          %p 大阪府大阪市生まれ。前職は歯科技工士の元職人。
+          %p 前職で作業の効率化を測る上でITに興味を持ち、プログラミングを知る。
+          %p IT業界やプログラミングの楽しさに触れ、その将来性や可能性に魅力を感じ、29歳で退職を決意。
+          %p 未経験から「データの職人」であるITエンジニアを目指し、日々奔走中。
+          %p 趣味は「クライミング」「ドラム」「フィットネス」「登山」「バイク」
+          
+        .back
+        = link_to '/', class: "back"do
+          Back
+          = fa_icon 'reply'

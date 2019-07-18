@@ -1,0 +1,46 @@
+.side_ber
+  .side_ber__title
+    Meun
+  .side_ber__menu
+    %ul.nav
+      %li.navtitle
+        Information
+        %ul.pull
+          %li
+            = link_to "/portfolio/information", class: "pull__text"do
+              .children-menu
+                このサイトについて
+      %li.navtitle
+        Profile
+        %ul.pull
+          %li
+            = link_to "/portfolio/profile", class: "pull__text" do
+              .children-menu
+                自己紹介
+      %li.navtitle
+        Experiment
+        %ul.pull
+          %li
+            = link_to "#", class: "pull__text" do
+              .children-menu
+                工事中
+      %li.navtitle
+        SNS
+        %ul.pull
+          %li
+            = link_to "https://twitter.com/kooke_pro", class: "pull__text" do
+              .children-menu
+                Twitter
+          %li
+            = link_to "https://www.facebook.com/kousuke.yasui.35", class: "pull__text" do
+              .children-menu
+                Facebook
+          %li
+            = link_to "https://github.com/koo-ke", class: "pull__text" do
+              .children-menu
+                GitHub
+          %li
+            = link_to "https://www.wantedly.com/users/108008661", class: "pull__text" do
+              .children-menu
+                Wantedly
+  %a.twitter-timeline{"data-tweet-limit" => "1", :href => "https://twitter.com/kooke_pro?ref_src=twsrc%5Etfw"}
