@@ -1,0 +1,43 @@
+.wrapper
+
+  = render 'portfolio/header'
+
+  .contents
+
+    = render 'portfolio/side_ber'
+
+    .contents__views
+      .postapp-wrapper
+        .information-title
+          = fa_icon 'info-circle'
+          Information
+        .information-text
+          このサイトは安井宏輔によるポートフォリオサイトになります。
+          %br
+          プログラミングに関する情報を随時更新していく予定です。
+          %br
+          %br
+          %p ・Meunについて
+
+        %table
+          %tr
+            %th Information
+            %td このサイトの説明
+          %tr
+            %th Profile
+            %td 自己紹介
+          %tr
+            %th Experiment
+            %td インプットした技術を試す実験ページ
+          %tr
+            %th SNS
+            %td アカウント一覧
+        .information-text
+          %p ・開発環境
+          .kaihatu
+            Haml・SCSS・Ruby・Ruby on Rails・JavaScript・jQuery・GitHub・MySQL・heroku・S3
+
+        .back
+        = link_to '/', class: "back"do
+          Back
+          = fa_icon 'reply'

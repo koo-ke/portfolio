@@ -1,61 +1,10 @@
 .wrapper
 
-  .header
-    %ul
-      - if user_signed_in?
-        %li
-          = link_to destroy_user_session_path, method: :delete, class:"header__post" do
-            .header__post--text ログアウト
-    .header__title
-      = link_to "/" do
-        %p PORTFOLIO
-  - if user_signed_in?
-    .edit
-      = link_to "/portfolio/new" do
-        = fa_icon 'pencil-square-o', class:"icon"
+  = render 'portfolio/header'
 
   .contents
-    .side_ber
-      .side_ber__title
-        Meun
-      .side_ber__menu
-        %ul.nav
-          %li.navtitle
-            Information
-            %ul.pull
-              %li
-                = link_to "#", class: "pull__text"do
-                  工事中
-          %li.navtitle
-            Profile
-            %ul.pull
-              %li
-                = link_to "#", class: "pull__text" do
-                  .children-menu
-                    工事中
-          %li.navtitle
-            Experiment
-            %ul.pull
-              %li
-                = link_to "#", class: "pull__text" do
-                  .children-menu
-                    工事中
-          %li.navtitle
-            SNS
-            %ul.pull
-              %li
-                = link_to "https://twitter.com/kooke_pro", class: "pull__text" do
-                  .children-menu
-                    Twitter
-              %li
-                = link_to "https://www.facebook.com/kousuke.yasui.35", class: "pull__text" do
-                  .children-menu
-                    Facebook
-              %li
-                = link_to "https://www.wantedly.com/users/108008661", class: "pull__text" do
-                  .children-menu
-                    Wantedly
-      %a.twitter-timeline{"data-tweet-limit" => "1", :href => "https://twitter.com/kooke_pro?ref_src=twsrc%5Etfw"}
+  
+    = render 'portfolio/side_ber'
 
     .contents__views
 
@@ -76,13 +25,3 @@
           = link_to "#{@post.github}", class: "postapp-back__text"do
             Repository
             = fa_icon 'github'
-
-
-
-
-
-        -# = @post.apptitle
-        -# = @post.text
-        -# = @post.github
-        -# = image_tag "#{@post.image}"
-        

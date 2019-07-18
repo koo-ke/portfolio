@@ -1,0 +1,15 @@
+.header
+  %ul
+    - if user_signed_in?
+      %li
+        = link_to destroy_user_session_path, method: :delete, class:"header__post" do
+          .header__post--text ログアウト
+          = link_to "/portfolio/new", class:"header__post" do
+            = fa_icon 'pencil-square-o', class:"header__post--text"
+    - else
+      %li
+        = link_to "/users/sign_in", class:"header__post" do
+          .header__post--text GUEST
+  .header__title
+    = link_to "/" do
+      %p PORTFOLIO

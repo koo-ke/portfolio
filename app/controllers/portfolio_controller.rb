@@ -33,7 +33,10 @@ class PortfolioController < ApplicationController
     redirect_to portfolio_index_path
   end
 
-  def experiment
+  def information
+  end
+
+  def profile
   end
 
   private

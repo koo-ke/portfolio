@@ -5,7 +5,12 @@ Rails.application.routes.draw do
 
   root 'portfolio#index'
   
-  resources :portfolio
+  resources :portfolio do
+    collection do
+      get :information
+      get :profile
+    end
+  end
 
 
 end
