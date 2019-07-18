@@ -20,45 +20,41 @@
         Meun
       .side_ber__menu
         %ul.nav
-          %li.side_ber__meun
+          %li.navtitle
             Information
-            %ul
+            %ul.pull
               %li
-                = link_to "#" do
-                  [このサイトについて]
-          %li.side_ber__meun
+                = link_to "#", class: "pull__text"do
+                  工事中
+          %li.navtitle
             Profile
-            %ul
+            %ul.pull
               %li
-                = link_to "#" do
+                = link_to "#", class: "pull__text" do
                   .children-menu
-                    [自己紹介]
-          %li.side_ber__meun
+                    工事中
+          %li.navtitle
             Experiment
-            %ul
+            %ul.pull
               %li
-                = link_to "#" do
+                = link_to "#", class: "pull__text" do
                   .children-menu
-                    [API]
-              %li
-                = link_to "#" do
-                  .children-menu
-                    [Unity]
-          %li.side_ber__meun
+                    工事中
+          %li.navtitle
             SNS
-            %ul
+            %ul.pull
               %li
-                = link_to "https://twitter.com/kooke_pro" do
+                = link_to "https://twitter.com/kooke_pro", class: "pull__text" do
                   .children-menu
-                    [Twitter]
+                    Twitter
               %li
-                = link_to "https://www.facebook.com/kousuke.yasui.35" do
+                = link_to "https://www.facebook.com/kousuke.yasui.35", class: "pull__text" do
                   .children-menu
-                    [Facebook]
+                    Facebook
               %li
-                = link_to "https://www.wantedly.com/users/108008661" do
+                = link_to "https://www.wantedly.com/users/108008661", class: "pull__text" do
                   .children-menu
-                    [Wantedly]
+                    Wantedly
       %a.twitter-timeline{"data-tweet-limit" => "1", :href => "https://twitter.com/kooke_pro?ref_src=twsrc%5Etfw"}
 
     .contents__views
