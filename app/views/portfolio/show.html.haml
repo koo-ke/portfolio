@@ -1,0 +1,92 @@
+.wrapper
+
+  .header
+    %ul
+      - if user_signed_in?
+        %li
+          = link_to destroy_user_session_path, method: :delete, class:"header__post" do
+            .header__post--text ログアウト
+    .header__title
+      = link_to "/" do
+        %p PORTFOLIO
+  - if user_signed_in?
+    .edit
+      = link_to "/portfolio/new" do
+        = fa_icon 'pencil-square-o', class:"icon"
+
+  .contents
+    .side_ber
+      .side_ber__title
+        Meun
+      .side_ber__menu
+        %ul.nav
+          %li.side_ber__meun
+            Information
+            %ul
+              %li
+                = link_to "#" do
+                  [このサイトについて]
+          %li.side_ber__meun
+            Profile
+            %ul
+              %li
+                = link_to "#" do
+                  .children-menu
+                    [自己紹介]
+          %li.side_ber__meun
+            Experiment
+            %ul
+              %li
+                = link_to "#" do
+                  .children-menu
+                    [API]
+              %li
+                = link_to "#" do
+                  .children-menu
+                    [Unity]
+          %li.side_ber__meun
+            SNS
+            %ul
+              %li
+                = link_to "https://twitter.com/kooke_pro" do
+                  .children-menu
+                    [Twitter]
+              %li
+                = link_to "https://www.facebook.com/kousuke.yasui.35" do
+                  .children-menu
+                    [Facebook]
+              %li
+                = link_to "https://www.wantedly.com/users/108008661" do
+                  .children-menu
+                    [Wantedly]
+      %a.twitter-timeline{"data-tweet-limit" => "1", :href => "https://twitter.com/kooke_pro?ref_src=twsrc%5Etfw"}
+
+    .contents__views
+
+      .postapp-wrapper
+        .show-views
+          .postapp-title
+            = @post.apptitle
+          .postapp-image
+            = image_tag "#{@post.image}" ,class:"postapp-image__resize"
+          .postapp-text
+            %p= @post.text
+
+          .postapp-back
+          = link_to '/', class: "postapp-back__text"do
+            Back
+            = fa_icon 'reply'
+          .postapp-repository
+          = link_to "#{@post.github}", class: "postapp-back__text"do
+            Repository
+            = fa_icon 'github'
+
+
+
+
+
+        -# = @post.apptitle
+        -# = @post.text
+        -# = @post.github
+        -# = image_tag "#{@post.image}"
+        

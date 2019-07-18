@@ -1,44 +1,97 @@
 .wrapper
 
   .header
-
+    %ul
+      - if user_signed_in?
+        %li
+          = link_to destroy_user_session_path, method: :delete, class:"header__post" do
+            .header__post--text ログアウト
+            = link_to "/portfolio/new", class:"header__post" do
+              = fa_icon 'pencil-square-o', class:"header__post--text"
+      - else
+        %li
+          = link_to "/users/sign_in", class:"header__post" do
+            .header__post--text GUEST
     .header__title
-      PORTFOLIO
-
-    - if user_signed_in?
-      = link_to destroy_user_session_path, method: :delete, class:"header__post" do
-        .header__post--text LOGOUT
-      = link_to "/portfolio/new", class:"header__post" do
-        .header__post--text 投稿する
-
-    - else
-      = link_to "/users/sign_up", class:"header__post" do
-        .header__post--text 新規登録
-
-  = link_to "/users/sign_in", class:"btn-real" do
-    LOGIN.
+      = link_to "/" do
+        %p PORTFOLIO
 
   .contents
-
     .side_ber
       .side_ber__title
         Meun
       .side_ber__menu
-        %ul
-          %li.side_ber__profile
+        %ul.nav
+          %li.navtitle
+            Information
+            %ul.pull
+              %li.i
+                = link_to "#", class: "pull__text"do
+                  工事中
+          %li.navtitle
             Profile
-          %a.twitter-timeline{:href => "https://twitter.com/kooke_pro?ref_src=twsrc%5Etfw"}
+            %ul.pull
+              %li
+                = link_to "#", class: "pull__text" do
+                  .children-menu
+                    工事中
+          %li.navtitle
+            Experiment
+            %ul.pull
+              %li
+                = link_to "#", class: "pull__text" do
+                  .children-menu
+                    工事中
+          %li.navtitle
+            SNS
+            %ul.pull
+              %li
+                = link_to "https://twitter.com/kooke_pro", class: "pull__text" do
+                  .children-menu
+                    Twitter
+              %li
+                = link_to "https://www.facebook.com/kousuke.yasui.35", class: "pull__text" do
+                  .children-menu
+                    Facebook
+              %li
+                = link_to "https://www.wantedly.com/users/108008661", class: "pull__text" do
+                  .children-menu
+                    Wantedly
+      %a.twitter-timeline{"data-tweet-limit" => "1", :href => "https://twitter.com/kooke_pro?ref_src=twsrc%5Etfw"}
 
-    .contents__login
+    .contents__views
+    - if user_signed_in?
 
+      .postapp-wrapper
+        - @posts.each do |post|
+          .postapp
+            .postapp__title
+              %p= post.apptitle
+            .postapp__image
+              = image_tag "#{post.image}", class:"postapp__image--resize"
+            .postapp__text
+              %p= post.text.truncate(26)
+          
+            .test
+              .title
+                %p= post.apptitle
+              .description
+                .description__btn
+                  = link_to "/portfolio/#{post.id}" do
+                    %p 詳細をみる
+              - if user_signed_in? && current_user.id == post.user_id
+                .delete
+                  = link_to "/portfolio/#{post.id}", method: :delete, data: { confirm: '本当に削除しますか？' } do
+                    = fa_icon 'times-circle-o', class: 'delete__icon'
+                .edit
+                  = link_to "/portfolio/#{post.id}/edit" do
+                    = fa_icon 'cog', class: 'edit__icon'
+
+    - else
       .introduction
         .introduction__title
           INTRODUCTION
-        .introduction__description
-          ここは安井宏輔のポートフォリオサイトです。
-          %br プログラミングに関するものを投稿します。
-
-        .swiper-container.top-carousel
+        .swiper-container
           .swiper-wrapper
             .swiper-slide
               = image_tag 'python.png', alt: 'swipe01' , class: 'slider-image'
@@ -49,31 +102,32 @@
           .swiper-pagination
         = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"
 
+      
         .introduction__description
           ログインすることで記事を観覧することができます。
-          %br testuser@gmail.comでそのままログインできます
+          %br
+          .guest
+            ゲスト様は「GUEST」ボタンよりログインをお願いします。
 
-- if user_signed_in?
-  .contents__app
-    - @posts.each do |post|
-      .title
-        %p= post.apptitle
-        - if user_signed_in? && current_user.id == post.user_id
-          .delete
-            = link_to "/portfolio/#{post.id}", method: :delete, data: { confirm: '本当に削除しますか？' } do
-              = fa_icon 'times-circle-o', class:"delete__icon"
-            .edit
-              = link_to "/portfolio/#{post.id}/edit" do
-                = fa_icon 'cog', class:"delete__icon"
-      .app
-        .app__view
-          = image_tag "#{post.image}", class:"app__view--image"
-        .app__description
-          %span.app__description--title POINT
-          %p= post.text
-          .app__github 
-            = link_to "#{post.github}", class:"app__github--link" do
-              = fa_icon 'github'
+      .footer
+        Copyright © 2019 memasite. All rights reserved. このサイト上にある画像・文章の複製・転載はご遠慮ください。
 
-  .footer
-    Thank you!!
+-# - if user_signed_in?
+-#   .contents__app
+-#     - @posts.each do |post|
+-#       .title
+-#         %p= post.apptitle
+
+-#       .app
+-#         .app__view
+-#           = image_tag "#{post.image}", class:"app__view--image"
+-#         .app__description
+-#           %span.app__description--title POINT
+-#           %p= post.text
+-#           .app__github 
+-#             = link_to "#{post.github}", class:"app__github--link" do
+-#               = fa_icon 'github'
+
+-# - else
+
+

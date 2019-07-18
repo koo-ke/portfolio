@@ -19,6 +19,7 @@ class PortfolioController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -30,6 +31,9 @@ class PortfolioController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     redirect_to portfolio_index_path
+  end
+
+  def experiment
   end
 
   private
