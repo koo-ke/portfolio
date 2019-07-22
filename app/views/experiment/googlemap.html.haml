@@ -1,0 +1,50 @@
+.wrapper
+
+  = render 'portfolio/header'
+
+  .contents
+
+    = render 'portfolio/side_ber'
+
+    .contents__views
+      .postapp-wrapper
+        .map-title
+          %p Google Maps API をサイトに導入してみる
+        .map-view
+
+          #map{:style => "width: 550px; height: 300px;"}
+
+          :javascript
+            var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);
+            var Options = {
+            zoom: 15,      
+            center: MyLatLng,    
+            mapTypeId: 'roadmap'   
+            };
+            var map = new google.maps.Map(document.getElementById('map'), Options);
+
+        :javascript
+          handler = Gmaps.build('Google');
+          handler.buildMap({ provider: {}, internal: {id: 'map'}} function(){
+            markers = handler.addMarkers(#{raw @hash.to_json});
+            handler.bounds.extendWith(markers);
+            handler.fitMapToBounds();
+          });
+
+        .map-text
+          .map-text__title
+            参考資料
+          %ul
+            = link_to 'https://cloud.google.com/maps-platform/' do
+              %li
+                %p Google Maps Platform (公式サイト)
+            = link_to 'https://hhgingisland.hatenablog.com/entry/2018/12/01/223000' do
+              %li
+                %p Google Maps API をローカル環境で使う際のAPIキーの利用制限について
+            = link_to 'https://qiita.com/nakanoyoshiki/items/af9f37e9d2653518d6b0' do
+              %li
+                %p RailsでGoogleMapを表示させる(gem 'gmaps4rails'の使い方)
+        .back
+        = link_to '/', class: "back"do
+          Back
+          = fa_icon 'reply'
