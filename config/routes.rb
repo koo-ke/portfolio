@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   end
 
   get 'experiment/googlemap' => 'experiment#googlemap'
-
+  get 'experiment/easychat' => 'experiment#easychat'
 
 end

@@ -5,3 +5,33 @@
 @import "contents";
 @import "footer";
 @import "experiment";
+
+.chat-view {
+  width: 90%;
+  height: 400px;
+  margin: 0 auto;
+  border: solid 1px #fff;
+  overflow: scroll;
+  &__message {
+    margin: 30px 10px 30px 10px;
+    padding: 20px;
+    color: #fff;
+    height: auto;
+    &--time {
+      font-size: 8px;
+    }
+    &--text {
+      margin: 20px;
+      text-align: right;
+    }
+  }
+}
+
+.chat-form {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  &__dotan {
+    margin: 10px;
+  }
+ }
