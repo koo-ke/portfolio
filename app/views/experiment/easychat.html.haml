@@ -1,0 +1,53 @@
+.wrapper
+
+  = render 'portfolio/header'
+
+  .contents
+
+    = render 'portfolio/side_ber'
+
+    .contents__views
+      .postapp-wrapper
+      
+        .map-title
+          %p  簡単なチャットを制作してみる
+
+        .chat-view
+
+          .chat-view__message
+            .chat-view__message--time
+              2019-07-06 01:59:23
+            .chat-view__message--text
+              初めまして
+
+          .chat-view__message
+            .chat-view__message--time
+              2019-07-06 01:59:23
+            .chat-view__message--text
+              初めまして
+
+          .chat-view__message
+            .chat-view__message--time
+              2019-07-06 01:59:23
+            .chat-view__message--text
+              初めまして
+
+          .chat-view__message
+            .chat-view__message--time
+              2019-07-06 01:59:23
+            .chat-view__message--text
+              Wordの練習や動作確認をしたい時に必要なのが、適当な文章。
+
+          .chat-view__message
+            .chat-view__message--time
+              2019-07-06 01:59:23
+            .chat-view__message--text
+              Wordの練習や動作確認をしたい時に必要なのが、適当な文章。
+
+
+        .chat-form
+          = form_with(model:@posts, url: portfolio_index_path ,local: true) do |f|
+            = f.text_field :message ,placeholder: "メッセージを入力してください" , style: 'width: 500px; height: 30px;'
+          .chat-form__dotan
+            = button_tag type: 'submit', style: 'width: 200px; height: 30px;' do
+              = fa_icon 'paper-plane'
